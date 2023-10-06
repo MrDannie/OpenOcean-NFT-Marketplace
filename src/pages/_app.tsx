@@ -5,6 +5,7 @@ import { SignerProvider } from "state/signer";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 
+
 const GRAPH_URL = process.env.NEXT_PUBLIC_GRAPH_URL as string;
 const client = new ApolloClient({
   cache: new InMemoryCache(),
