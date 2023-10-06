@@ -2,7 +2,7 @@ import NFTCard from "components/NFTCard";
 import useNFTMarket from "state/nft-market";
 
 const HomePage = () => {
-  const { listedNFTs } = useNFTMarket();
+  // const { listedNFTs } = useNFTMarket();
   return (
     <div className="flex w-full flex-col">
       {/* <div className="flex flex-wrap">
