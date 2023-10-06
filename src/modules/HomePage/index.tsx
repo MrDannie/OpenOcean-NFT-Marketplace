@@ -7,7 +7,7 @@ const HomePage = () => {
     <div className="flex w-full flex-col">
       <div className="flex flex-wrap">
         {listedNFTs?.map((nft) => (
-          <NFTCard nft={nft} className="mr-3 mb-3" key={nft.id} />
+          <NFTCard nft={nft} className="mr-3 mb-3" key={nft?.id} />
         ))}
       </div>
     </div>
