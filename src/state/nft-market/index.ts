@@ -11,6 +11,9 @@ import useListedNFTs from "./useListedNFTs";
 import useOwnedListedNFTs from "./useOwnedListedNFTs";
 import useOwnedNFTs from "./useOwnedNFTs";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string;
+
+
 const useNFTMarket = () => {
   const { signer } = useSigner();
   const nftMarket = new Contract(NFT_MARKET_ADDRESS, NFT_MARKET.abi, signer);
@@ -25,7 +28,7 @@ const useNFTMarket = () => {
       data.append("name", values.name);
       data.append("description", values.description);
       data.append("image", values.image!);
-      const response = await fetch("../open-ocean-nft-marketplace-cqni.vercel.app/api/nft-storage", {
+      const response = await fetch(`${BASE_URL}`, {
         method: "POST",
         body: data,
       });
