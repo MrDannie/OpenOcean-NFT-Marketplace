@@ -25,7 +25,7 @@ const useNFTMarket = () => {
       data.append("name", values.name);
       data.append("description", values.description);
       data.append("image", values.image!);
-      const response = await fetch("/api/nft-storage", {
+      const response = await fetch("open-ocean-nft-marketplace-cqni.vercel.app/api/nft-storage", {
         method: "POST",
         body: data,
       });
