@@ -3,7 +3,7 @@ import { readFileSync, unlinkSync } from "fs";
 import { NextApiHandler } from "next";
 import { File, NFTStorage } from "nft.storage";
 
-const client = new NFTStorage({ token: `${process.env.NFT_STORAGE_KEY}` });
+const client = new NFTStorage({ token: `${process.env.NEXT_PUBLIC_NFT_STORAGE_KEY}` });
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method != "POST") {
