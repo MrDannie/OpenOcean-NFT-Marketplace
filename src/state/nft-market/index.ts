@@ -12,6 +12,8 @@ import useOwnedListedNFTs from "./useOwnedListedNFTs";
 import useOwnedNFTs from "./useOwnedNFTs";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string;
+const API_KEY = process.env.NEXT_PUBLIC_NFT_STORAGE_KEY as string;
+
 
 
 const useNFTMarket = () => {
@@ -31,6 +33,10 @@ const useNFTMarket = () => {
       const response = await fetch(`${BASE_URL}`, {
         method: "POST",
         body: data,
+        mode: 'no-cors',
+        headers: {
+          Authorization: `Bearer ${API_KEY}`
+        }
       });
       if (response.status == 201) {
         const json = await response.json();
