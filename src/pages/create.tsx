@@ -1,10 +1,8 @@
-import type { NextPage } from "next";
-import CreationPage from "../modules/CreationPage";
+import type { NextPage } from 'next'
+import CreationPage from '../modules/CreationPage'
 
 const Create: NextPage = () => {
-  return (
-       <CreationPage />
-  );
-};
+    return <CreationPage />
+}
 
-export default Create;
+export default Create

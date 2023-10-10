@@ -1,14 +1,14 @@
-import { useFormikContext } from "formik";
-import Button from "../../../components/Button";
+import { useFormikContext } from 'formik'
+import Button from '../../../components/Button'
 
 const SubmitButton = () => {
-  const { isSubmitting, submitForm } = useFormikContext();
+    const { isSubmitting, submitForm } = useFormikContext()
 
-  return (
-    <Button loading={isSubmitting} onClick={submitForm}>
-      Create
-    </Button>
-  );
-};
+    return (
+        <Button loading={isSubmitting} onClick={submitForm}>
+            Create
+        </Button>
+    )
+}
 
-export default SubmitButton;
+export default SubmitButton

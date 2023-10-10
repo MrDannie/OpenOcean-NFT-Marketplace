@@ -1,8 +1,8 @@
-import OwnedPage from "modules/OwnedPage";
-import type { NextPage } from "next";
+import OwnedPage from 'modules/OwnedPage'
+import type { NextPage } from 'next'
 
 const Owned: NextPage = () => {
-  return <OwnedPage />;
-};
+    return <OwnedPage />
+}
 
-export default Owned;
+export default Owned

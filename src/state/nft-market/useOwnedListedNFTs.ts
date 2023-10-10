@@ -1,27 +1,27 @@
-import { gql, useQuery } from "@apollo/client";
-import useSigner from "state/signer";
+import { gql, useQuery } from '@apollo/client'
+import useSigner from 'state/signer'
 
-import { NFT } from "./interfaces";
-import { ethers } from "ethers";
-import { NFT_MARKET_ADDRESS } from "./config";
+import { NFT } from './interfaces'
+import { ethers } from 'ethers'
+import { NFT_MARKET_ADDRESS } from './config'
 import {
-  GetOwnedListedNFTs,
-  GetOwnedListedNFTsVariables,
-  GetOwnedListedNFTs_nfts,
-} from "./__generated__/GetOwnedListedNFTs";
-import { parseRawNFT } from "./helper";
+    GetOwnedListedNFTs,
+    GetOwnedListedNFTsVariables,
+    GetOwnedListedNFTs_nfts,
+} from './__generated__/GetOwnedListedNFTs'
+import { parseRawNFT } from './helper'
 
 const useOwnedListedNFTs = () => {
-  const { address } = useSigner();
+    const { address } = useSigner()
 
-  const { data } = useQuery<GetOwnedListedNFTs, GetOwnedListedNFTsVariables>(
-    GET_OWNED_LISTED_NFTS,
-    { variables: { owner: address ?? "" }, skip: !address }
-  );
-  const ownedListedNFTs = data?.nfts.map(parseRawNFT);
+    const { data } = useQuery<GetOwnedListedNFTs, GetOwnedListedNFTsVariables>(
+        GET_OWNED_LISTED_NFTS,
+        { variables: { owner: address ?? '' }, skip: !address }
+    )
+    const ownedListedNFTs = data?.nfts.map(parseRawNFT)
 
-  return { ownedListedNFTs };
-};
+    return { ownedListedNFTs }
+}
 
 const GET_OWNED_LISTED_NFTS = gql`
   query GetOwnedListedNFTs($owner: String!) {
@@ -33,6 +33,6 @@ const GET_OWNED_LISTED_NFTS = gql`
       price
     }
   }
-`;
+`
 
-export default useOwnedListedNFTs;
+export default useOwnedListedNFTs

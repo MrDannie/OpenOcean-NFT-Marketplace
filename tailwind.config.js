@@ -1,8 +1,8 @@
 module.exports = {
-  content: ["./src/**/*.tsx", "./src/styles/*"],
-  theme: {
-    extend: {},
-  },
+    content: ['./src/**/*.tsx', './src/styles/*'],
+    theme: {
+        extend: {},
+    },
 
-  plugins: [],
-};
+    plugins: [],
+}
